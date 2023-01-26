@@ -7,7 +7,8 @@ import path from "path";
 // Get Env Vars
 dotenv.config({ path: path.join(__dirname, "../../.env") });
 
-import { appRouter, createContext } from "./trpc";
+import { appRouter } from "./root";
+import { createContext } from "./trpc";
 
 // Init Express App
 const app: Express = express();
@@ -19,7 +20,7 @@ app.use(
 );
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+  res.send("Express + TRPC + TypeScript Server");
 });
 
 app.use(
