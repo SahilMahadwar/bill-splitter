@@ -16,7 +16,7 @@
     "start:client": "yarn workspace web start",
     "start:server": "yarn workspace server start",
     "serve:client": "yarn workspace web dev",
-    "serve:server": "yarn workspace server start"
+    "serve:server": "yarn workspace server dev"
   },
   "packageManager": "yarn@3.2.1",
   "dependencies": {
