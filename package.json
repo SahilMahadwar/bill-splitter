@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "server",
+      "web",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "serve": "concurrently \"yarn serve:client\"  \"yarn serve:server\"",
+    "start": "concurrently \"yarn start:client\"  \"yarn start:server\"",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "yarn workspace web build",
+    "build:server": "yarn workspace server build",
+    "start:client": "yarn workspace web start",
+    "start:server": "yarn workspace server start",
+    "serve:client": "yarn workspace web dev",
+    "serve:server": "yarn workspace server start"
+  },
+  "packageManager": "yarn@3.2.1",
+  "dependencies": {
+    "dotenv": "^16.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
