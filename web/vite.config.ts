@@ -8,9 +8,9 @@ export default ({ mode }) => {
   // https://vitejs.dev/config/
   return defineConfig({
     plugins: [react()],
-    envDir:
-      process.env.NODE_ENV === "development"
-        ? path.join(__dirname, "../")
-        : path.join(__dirname, "./"),
+    // envDir:
+    //   process.env.NODE_ENV === "development"
+    //     ? path.join(__dirname, "../")
+    //     : path.join(__dirname, "./"),
   });
 };

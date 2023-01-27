@@ -8,7 +8,7 @@ import path from "path";
 dotenv.config({ path: path.join(__dirname, "../../.env") });
 
 import { appRouter } from "./root";
-import { createContext } from "./trpc";
+import { createTRPCContext } from "./trpc";
 
 // Init Express App
 const app: Express = express();
@@ -27,7 +27,7 @@ app.use(
   "/trpc",
   trpcExpress.createExpressMiddleware({
     router: appRouter,
-    createContext: createContext,
+    createContext: createTRPCContext,
   })
 );
 
